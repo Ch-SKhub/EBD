@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generador de Íconos</title>
+</head>
+<body>
+    <canvas id="canvas" width="512" height="512"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Fondo
+        ctx.fillStyle = '#4FA095';
+        ctx.fillRect(0, 0, 512, 512);
+        
+        // Texto
+        ctx.fillStyle = '#F6F6C9';
+        ctx.font = 'bold 200px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('📖', 256, 256);
+        
+        // Descargar
+        const link = document.createElement('a');
+        link.download = 'icon-512x512.png';
+        link.href = canvas.toDataURL();
+        link.click();
+    </script>
+</body>
+</html>
